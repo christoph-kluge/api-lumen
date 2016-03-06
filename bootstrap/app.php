@@ -83,6 +83,11 @@ $app->singleton(
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 
+# local service providers for any environment except production
+if (false === $app->environment('production')) {
+    $app->register(Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
