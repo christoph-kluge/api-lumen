@@ -81,6 +81,7 @@ $app->singleton(
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(\App\Providers\ReactPhpServiceProvider::class);
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 
 # local service providers for any environment except production

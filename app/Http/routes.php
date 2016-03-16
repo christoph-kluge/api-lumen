@@ -11,6 +11,11 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
+//$app->get('/', 'TestController@index');
+
+/** @var \Dingo\Api\Routing\Router $api */
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', function ($api) {
+    /** @var \Dingo\Api\Routing\Router $api */
+    $api->get('/', 'App\Http\Controllers\TestController@index');
 });
